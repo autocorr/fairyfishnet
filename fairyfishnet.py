@@ -140,7 +140,9 @@ LVL_SKILL = [-4, 0, 3, 6, 10, 14, 16, 18, 20]
 LVL_MOVETIMES = [50, 50, 100, 150, 200, 300, 400, 500, 1000]
 LVL_DEPTHS = [1, 1, 1, 2, 3, 5, 8, 13, 22]
 
-NNUE_NET = {}
+NNUE_NET = {
+    "gethenian": "0",
+}
 
 NNUE_ALIAS = {
     "cambodian": "makruk",
@@ -149,46 +151,47 @@ NNUE_ALIAS = {
 }
 
 required_variants = set([
-    "chess",
-    "crazyhouse",
-    "placement",
-    "atomic",
-    "makruk",
-    "makpong",
-    "cambodian",
-    "sittuyin",
-    "asean",
-    "shogi",
-    "minishogi",
-    "kyotoshogi",
-    "dobutsu",
-    "gorogoroplus",
-    "torishogi",
-    "xiangqi",
-    "manchu",
-    "janggi",
-    "minixiangqi",
-    "capablanca",
-    "capahouse",
-    "seirawan",
-    "shouse",
-    "grand",
-    "grandhouse",
-    "shogun",
-    "shako",
-    "hoppelpoppel",
-    "orda",
-    "synochess",
-    "shinobi",
-    "empire",
-    "ordamirror",
-    "chak",
-    "chennis",
-    "duck",
-    "spartan",
-    "kingofthehill",
-    "3check",
-    "mansindam",
+    #"chess",
+    #"crazyhouse",
+    #"placement",
+    #"atomic",
+    #"makruk",
+    #"makpong",
+    #"cambodian",
+    #"sittuyin",
+    #"asean",
+    #"shogi",
+    #"minishogi",
+    #"kyotoshogi",
+    #"dobutsu",
+    #"gorogoroplus",
+    #"torishogi",
+    #"xiangqi",
+    #"manchu",
+    #"janggi",
+    #"minixiangqi",
+    #"capablanca",
+    #"capahouse",
+    #"seirawan",
+    #"shouse",
+    #"grand",
+    #"grandhouse",
+    #"shogun",
+    #"shako",
+    #"hoppelpoppel",
+    #"orda",
+    #"synochess",
+    #"shinobi",
+    #"empire",
+    #"ordamirror",
+    #"chak",
+    #"chennis",
+    #"duck",
+    #"spartan",
+    #"kingofthehill",
+    #"3check",
+    #"mansindam",
+    "gethenian",
 ])
 
 
@@ -1483,7 +1486,7 @@ def update_nnue():
 
 
 def validate_nnue():
-    update_nnue()
+    #update_nnue()
 
     nnue_link = "https://github.com/ianfab/Fairy-Stockfish/wiki/List-of-networks"
     for variant in NNUE_NET:
@@ -2293,6 +2296,36 @@ flagPiece = k
 flagRegionWhite = *9
 flagRegionBlack = *1
 immobilityIllegal = true
+
+# A Kyoto Shogi variant with a left/right theme.
+[gethenian]
+maxRank = 7
+maxFile = 7
+king = -
+customPiece1 = k:K
+customPiece2 = q:mW
+customPiece3 = b:lfrbB
+customPiece4 = i:rflbB
+customPiece5 = r:lrR
+customPiece6 = n:hlN
+customPiece7 = t:hrN
+customPiece8 = m:WfF
+customPiece9 = s:FfW
+startFen = 2ikb2/2mnm2/7/7/7/2MNM2/2B+KI2[] w - - 0 1
+promotionPieceTypes = -
+promotedPieceType = k:q b:r i:r n:t m:s
+promotionRegionWhite = *1 *2 *3 *4 *5 *6 *7
+promotionRegionBlack = *7 *6 *5 *4 *3 *2 *1
+mandatoryPiecePromotion = true
+pieceDemotion = true
+pieceDrops = true
+capturesToHand = true
+dropPromoted = true
+immobilityIllegal = false
+extinctionValue = loss
+extinctionPieceTypes = kq
+extinctionPseudoRoyal = true
+stalemateValue = loss
 """)
 
     ini_file = os.path.join(engine_dir, "variants.ini")
