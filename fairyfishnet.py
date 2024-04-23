@@ -1689,7 +1689,7 @@ def cmd_run(args):
         stockfish_command = get_stockfish_command(conf)
 
     # Check .nnue files
-    #validate_nnue()  # XXX
+    validate_nnue()
 
     print()
     print("### Checking configuration ...")
@@ -2442,7 +2442,7 @@ def main(argv):
     g.add_argument("--threads-per-process", "--threads", type=int, dest="threads", help="hint for the number of threads to use per engine process (default: %d)" % DEFAULT_THREADS)
     g.add_argument("--fixed-backoff", action="store_true", default=None, help="fixed backoff (only recommended for move servers)")
     g.add_argument("--no-fixed-backoff", dest="fixed_backoff", action="store_false", default=None)
-    g.add_argument("--setoption", "-o", nargs=2, action="append", default=[], metavar=("NAME", "VALUE"), help="set a custom uci option")
+    g.add_argument("--setoption", "-o", nargs=3, action="append", default=[], metavar=("NAME", "VALUE"), help="set a custom uci option")
 
     commands = collections.OrderedDict([
         ("run", cmd_run),
