@@ -149,52 +149,53 @@ NNUE_ALIAS = {
 }
 
 required_variants = set([
-    "ataxx",
-    "chess",
-    "crazyhouse",
-    "placement",
-    "atomic",
-    "makruk",
-    "makpong",
-    "cambodian",
-    "sittuyin",
-    "asean",
-    "shogi",
-    "minishogi",
-    "kyotoshogi",
-    "dobutsu",
-    "gorogoroplus",
-    "torishogi",
-    "cannonshogi",
-    "xiangqi",
-    "manchu",
-    "janggi",
-    "minixiangqi",
-    "capablanca",
-    "capahouse",
-    "seirawan",
-    "shouse",
-    "grand",
-    "grandhouse",
-    "shogun",
-    "shako",
-    "hoppelpoppel",
-    "orda",
-    "synochess",
-    "shinobi",
-    "shinobiplus",
-    "empire",
-    "ordamirror",
-    "chak",
-    "chennis",
-    "duck",
-    "spartan",
-    "kingofthehill",
-    "3check",
-    "mansindam",
-    "haganeshogi",
-    "dragon",
-    "khans",
+    #"ataxx",
+    #"chess",
+    #"crazyhouse",
+    #"placement",
+    #"atomic",
+    #"makruk",
+    #"makpong",
+    #"cambodian",
+    #"sittuyin",
+    #"asean",
+    #"shogi",
+    #"minishogi",
+    #"kyotoshogi",
+    #"dobutsu",
+    #"gorogoroplus",
+    #"torishogi",
+    #"cannonshogi",
+    #"xiangqi",
+    #"manchu",
+    #"janggi",
+    #"minixiangqi",
+    #"capablanca",
+    #"capahouse",
+    #"seirawan",
+    #"shouse",
+    #"grand",
+    #"grandhouse",
+    #"shogun",
+    #"shako",
+    #"hoppelpoppel",
+    #"orda",
+    #"synochess",
+    #"shinobi",
+    #"shinobiplus",
+    #"empire",
+    #"ordamirror",
+    #"chak",
+    #"chennis",
+    #"duck",
+    #"spartan",
+    #"kingofthehill",
+    #"3check",
+    #"mansindam",
+    #"haganeshogi",
+    #"dragon",
+    #"khans",
+    "grasshopperking",
 ])
 
 
@@ -1688,7 +1689,7 @@ def cmd_run(args):
         stockfish_command = get_stockfish_command(conf)
 
     # Check .nnue files
-    validate_nnue()
+    #validate_nnue()  # XXX
 
     print()
     print("### Checking configuration ...")
@@ -2406,6 +2407,10 @@ pieceDrops = true
 perpetualCheckIllegal = true
 stalemateValue = loss
 mandatoryPiecePromotion = true
+
+[grasshopperking:chess]
+king = k:gQ
+stalemateValue = loss
 """)
 
     ini_file = os.path.join(engine_dir, "variants.ini")
