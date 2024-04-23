@@ -140,7 +140,9 @@ LVL_SKILL = [-4, 0, 3, 6, 10, 14, 16, 18, 20]
 LVL_MOVETIMES = [50, 50, 100, 150, 200, 300, 400, 500, 1000]
 LVL_DEPTHS = [1, 1, 1, 2, 3, 5, 8, 13, 22]
 
-NNUE_NET = {}
+NNUE_NET = {
+    "grasshopperking": "0",
+}
 
 NNUE_ALIAS = {
     "cambodian": "makruk",
@@ -1495,7 +1497,7 @@ def update_nnue():
 
 
 def validate_nnue():
-    update_nnue()
+    #update_nnue()
 
     nnue_link = "https://github.com/ianfab/Fairy-Stockfish/wiki/List-of-networks"
     for variant in NNUE_NET:
