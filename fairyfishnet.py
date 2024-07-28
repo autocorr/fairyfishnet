@@ -251,6 +251,7 @@ required_variants = set([
     "petrified",
     "joust",
     "anticapablanca",
+    "khansmirror",
 ])
 
 
@@ -2798,6 +2799,51 @@ extinctionValue = win
 extinctionPieceTypes = *
 extinctionPseudoRoyal = false
 castling = false
+
+[khansmirror]
+king = k
+centaur = h
+knibis = a
+kniroo = l
+customPiece1 = t:mNcK
+customPiece2 = s:mfhNcfW
+promotionPawnTypes = s
+promotionPieceTypes = alht
+stalemateValue = loss
+nMoveRuleTypes = s
+flagPiece = k
+flagRegionWhite = *8
+flagRegionBlack = *1
+startFen = lhatkahl/ssssssss/8/8/8/8/SSSSSSSS/LHATKAHL w - - 0 1
+
+[shaolinking]
+king = -
+commoner = k
+rook = r
+bishop = b
+knight = n
+queen = q
+customPiece1 = p:fmWfceFifmnD
+customPiece2 = g:cQ
+startFen = rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+castling = true
+castlingKingPiece = k
+promotionPieceTypes = -
+promotedPieceType = k:g
+promotionRegionWhite = *1 *2 *3 *4 *5 *6 *7 *8
+promotionRegionBlack = *8 *7 *6 *5 *4 *3 *2 *1
+mandatoryPiecePromotion = true
+pieceDemotion = true
+extinctionValue = loss
+extinctionPieceTypes = kg
+extinctionPseudoRoyal = true
+flagPiece = p
+flagRegionWhite = *8
+flagRegionBlack = *1
+nMoveRule = 50
+nFoldRule = 3
+nFoldValue = draw
+stalemateValue = loss
 """)
 
     ini_file = os.path.join(engine_dir, "variants.ini")
